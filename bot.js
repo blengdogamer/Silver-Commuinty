@@ -27,10 +27,6 @@ client.user.setGame(`24/7 khelp `,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-const fs = require("fs"); 
-const canvas = require("canvas-prebuilt");
-const jimp = require("jimp");
-const moment = require('moment');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
