@@ -4,7 +4,7 @@ const prefix = 'k'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`24/7 khelp `,"http://twitch.tv/S-F")
+client.user.setGame(`24/7 $help `,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -27,7 +27,6 @@ client.user.setGame(`24/7 khelp `,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -55,7 +54,7 @@ message.channel.send({embed});
 
 //avatar
 client.on('message', message => {
-if (message.content.startsWith("kavatar")) {
+if (message.content.startsWith("$avatar")) {
   var mentionned = message.mentions.users.first();
 var x5bzm;
 if(mentionned){
@@ -71,7 +70,7 @@ message.channel.sendEmbed(embed);
 }
 });
 client.on('message', message => {
-    if (message.content === "kcreateroles") {
+    if (message.content === "$createroles") {
     if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
             if (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(`**${message.author.username} You Dont Have** ``MANAGE_ROLES`` **Premission**`);
 
@@ -156,7 +155,7 @@ channel.send(`**${member}
     });
 });
 client.on('message', message => {
-if (message.content.startsWith("kban")) {
+if (message.content.startsWith("$ban")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
@@ -190,7 +189,7 @@ client.on('message', msg => {
 });
 client.on('message', message => {
 
-    if (message.content === "kmutechannel") {
+    if (message.content === "$mutec") {
                         if(!message.channel.guild) return message.reply(' This command only for servers');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -202,7 +201,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
            });
              }
 //™¦༺♚ƙἶղց|MaS♚༺¦™#7105
-if (message.content === "kunmutechannel") {
+if (message.content === "$unmutec") {
     if(!message.channel.guild) return message.reply(' This command only for servers');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -272,7 +271,7 @@ client.on('message', function(message) {
 });
 client.on('message', message => {
    let args = message.content.split(" ").slice(1);
-  if (message.content.startsWith("kwarn")) {
+  if (message.content.startsWith("$warn")) {
       message.delete().then;
        if(message.member.hasPermission("MANAGE_MESSAGES")) {
            message.channel.send(args);
@@ -344,32 +343,6 @@ client.on('message', message => {
     message.channel.send(dateString);
 }
 });
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === prefix + "invite") {
-
-
- message.author.sendMessage(`
-
-╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱╭╮
-╭╯╰┫┃╱╱╱╱┃┃┃╭╯╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
-╰╮╭┫╰━┳━━┫╰╯╯╭┳━╮╭━━┫╰╯╰┳━┻╮╭╯
-╱┃┃┃╭╮┃┃━┫╭╮┃┣┫╭╮┫╭╮┃╭━╮┃╭╮┃┃
-╱┃╰┫┃┃┃┃━┫┃┃╰┫┃┃┃┃╰╯┃╰━╯┃╰╯┃╰╮
-╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
- 
-بامكانك دعوة البوت من هنا
-
-https://discordapp.com/api/oauth2/authorize?client_id=463505511485014017&permissions=8&scope=bot
-
-`);
-
-message.channel.send('**تم الارسال في الخاص**');
-
-    }
-});
 client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
@@ -424,7 +397,7 @@ client.on('message', function(msg) {
 });
 client.on("message", message => {
   let command = message.content.split(" ")[0];
-  if (command === "kmute") {
+  if (command === "$mute") {
           if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
                   if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   let user = message.mentions.users.first();
@@ -452,7 +425,7 @@ client.on("message", message => {
   }
 
 };
-    if (command === "kunmute") {
+    if (command === "$unmute") {
           if(!message.channel.guild) return message.reply('**:x: اسف لكن لا تمتلك برمشن **');         
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   let user = message.mentions.users.first();
@@ -483,7 +456,7 @@ client.on("message", message => {
 
 });
 client.on('message', message => {
-     if (message.content === "kbot") {
+     if (message.content === "$bot") {
             if(!message.channel.guild) return message.reply('** This command only for servers **');
      let embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -496,7 +469,7 @@ message.channel.sendEmbed(embed);
 });
 client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='kmember')
+      if(message.content =='$member')
       var IzRo = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL) 
@@ -595,4 +568,5 @@ client.on("message", message => {
 		} 
 	} 
 });
+
 client.login(process.env.BOT_TOKEN);
